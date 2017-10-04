@@ -1,0 +1,33 @@
+<html>
+<body>
+
+<button id= "123">Click me</button>
+
+<script>
+var device;
+var buffer;
+var view;
+
+buffer = new ArrayBuffer(35);
+view   = new Uint8Array(buffer);
+view[0] = 0x1;
+
+let a = document.getElementById('123');
+
+a.addEventListener('click', async () =>{
+navigator.usb.requestDevice({ filters: [{ vendorId: 0x0483,productId: 0x3333 }] })
+.then(selectedDevice => {
+   device = selectedDevice;
+   return device.open(); // Begin a session.
+ })
+.then(() => device.selectConfiguration(1)) // Select configuration #1 for the device.
+.then(() => device.claimInterface(0)) // Request exclusive control over interface #2.
+.then(() => device.transferOut(1, view)) // Waiting for 64 bytes of data from endpoint #5.
+.catch(error => { console.log(error); });
+
+});
+
+</script>
+
+</body>
+</html>
