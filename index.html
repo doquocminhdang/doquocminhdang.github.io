@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <body>
-    <form action="test.html" name="formlogin" id="formlogin">
-        Username: <input type="text" name="username" id="username" />    
-        Password: <input type="password" name="password" id="password"/> 
-        <input type="submit" name="Submit" value="Submit" />
-    </form>
+
+<form name="login_form" id="login_form" action="" method="POST" onsubmit="handleFunction('action_login', document.getElementById('user_name_id').value, document.getElementById('password_id').value); return false;">
+    <div class="login_line">name<input name="user_name" id="user_name_id" size="16" maxlength="16" value="" type="text"></div>
+    <div class="login_line">password<input name="password" id="password_id" size="16" maxlength="16" type="password"></div>
+    <div class="login_line">&nbsp;<input class="icon icon_accept" value="login" type="submit"></div>
+</form> <!-- login_form -->
+
 </body>
 </html>
-
