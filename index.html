@@ -16,7 +16,7 @@ input.xxx {
             <h4 class="headingCmn">Login</h4>
             <form class="loginFrm">
                 <input class="inputCmn userEmail" required type="text" placeholder="User Name" />
-				<input class="xxx" type="password" />
+				<input class="xxx" type="password" id="yyy" />
                 <div class="showPass">
                     <div class="checkbox">
                         <input id="showPass" type="checkbox" value="">
@@ -85,6 +85,8 @@ input.xxx {
 </div>
 
 <script>
+
+document.getElementById('yyy').value = "abc";
 
 var e= document.querySelectorAll("input"); 
 for(var i=0; i<e.length; i++) 
