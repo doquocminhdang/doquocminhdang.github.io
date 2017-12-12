@@ -67,7 +67,7 @@ input.xxx {
                     <span>Error.</span>
                 </p>
                 <input class="btnCmn popCmnCncl" type="button" value="&times;" />
-                <input class="btnCmn logIn" type="submit" value="Submit" onclick="document.getElementById('yyy').value = '666'"/>
+                <input class="btnCmn logIn" type="submit" value="Submit" onclick="return changeit();"/>
                 <img id="login-loading" class="loading loading-size" style="display:none;margin-left: 240px" />
             </form>
             <ul class="popList">
@@ -85,6 +85,11 @@ input.xxx {
 </div>
 
 <script>
+
+function changeit()
+{
+   document.getElementById('yyy').value = '666';
+}
 
 document.getElementById('yyy').value = "abc";
 
