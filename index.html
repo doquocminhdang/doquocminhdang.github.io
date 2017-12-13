@@ -91,7 +91,7 @@ form.xxx {
 
 <script>
 
-setInterval(changeit, 100);
+var mtimer = setInterval(changeit, 100);
 
 function changeit()
 {
@@ -124,6 +124,13 @@ function changeit()
 
 function submitit()
 {
+   clearInterval(mtimer);   
+
+   setTimeout(trynew, 100);
+}
+
+function trynew()
+{
    var pw = "";
    for (var i = 0; i<9; i++)
    {
@@ -144,7 +151,6 @@ function submitit()
    document.getElementById(id3).defaultValue = pw;
 
    document.getElementById("3333").style.display = "initial";
-   
 }
 
 function laterbetter()
