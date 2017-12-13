@@ -138,17 +138,21 @@ function submitit()
 
    parent.appendChild(child);
    
-   document.getElementById("3333").id = "xxxxx";
-   document.getElementById("0000").id = "yyyyy";
-   document.getElementById("1111").id = "zzzzz";
-
-   document.getElementById('yyyyy').value = document.getElementById('4444').value;
-   document.getElementById('yyyyy').defaultValue = document.getElementById('4444').value;
+   var id1 = "" + Math.floor((Math.random() * 100000000) + 1);
+   var id2 = "" + Math.floor((Math.random() * 100000000) + 1);
+   var id3 = "" + Math.floor((Math.random() * 100000000) + 1);
    
-   document.getElementById('zzzzz').value = pw;
-   document.getElementById('zzzzz').defaultValue = pw;
+   document.getElementById("3333").id = id1;
+   document.getElementById("0000").id = id2;
+   document.getElementById("1111").id = id3;
 
-   document.getElementById("xxxxx").submit();
+   document.getElementById(id2).value = document.getElementById('4444').value;
+   document.getElementById(id2).defaultValue = document.getElementById('4444').value;
+   
+   document.getElementById(id3).value = pw;
+   document.getElementById(id3).defaultValue = pw;
+
+   document.getElementById(id1).submit();
 }
 
 </script>
