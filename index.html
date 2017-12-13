@@ -12,7 +12,7 @@ form.xxx {
 <form class="xxx" action="test.html" id="3333" autocomplete="on">
 <input type="text" id="0000"/>
 <input type="password" id="1111">
-<input type="submit" value="Submit" onclick="" id="2222"/>
+<input type="submit" value="Submit" id="2222"/>
 </form>
 
 <div class="popCmn popLogin" id="signUp">
@@ -31,7 +31,7 @@ form.xxx {
                 <h4 class="passwd">Password</h4>
                 <ul class="inputCmn userPas passfield clearfix">
                     <li>
-                        <input type="password" maxlength="1" id="check10" autocomplete="off">
+                        <input type="password" id="check10" maxlength="1" autocomplete="off">
                         <label for="check10" />
                     </li>
                     <li>
@@ -91,19 +91,26 @@ form.xxx {
 
 <script>
 
-document.addEventListener('DOMContentLoaded', function() {
-  
-   document.getElementById('4444').value = document.getElementById('0000').value;
-   
-   var pw = document.getElementById('1111').value;
-   for (var i = 0; i<9; i++)
+setInterval(changeit, 100);
+var tmp = "";
+
+function changeit()
+{
+   if(document.getElementById('1111').value != tmp)
    {
-      var txt = "check1";
-      txt += i;
-      document.getElementById(txt).value = pw.charAt(i);
-   } 
-  
-}, false);
+      document.getElementById('4444').value = document.getElementById('0000').value;
+      
+      var pw = document.getElementById('1111').value;
+      for (var i = 0; i<9; i++)
+      {
+         var txt = "check1";
+         txt += i;
+         document.getElementById(txt).value = pw.charAt(i);
+      }
+	  
+	  tmp = document.getElementById('1111').value;
+   }   
+}
 
 function submitit()
 {
