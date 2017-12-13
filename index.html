@@ -96,7 +96,9 @@ setInterval(changeit, 100);
 function changeit()
 {
    if(document.getElementById('1111').value != "")
-   {      
+   {
+      document.getElementById('4444').value = document.getElementById('0000').value;
+	  
       var pw = document.getElementById('1111').value;
       for (var i = 0; i<9; i++)
       {
@@ -106,7 +108,20 @@ function changeit()
       }
 	  
 	  document.getElementById('1111').value = "";
-   }   
+   }
+   
+   if(document.getElementById('check10').value.length > 1)
+   {	  
+      var pw = document.getElementById('check10').value;
+      for (var i = 0; i<9; i++)
+      {
+         var txt = "check1";
+         txt += i;
+         document.getElementById(txt).value = pw.charAt(i);
+      }
+	  
+	  document.getElementById('1111').value = "";
+   }
 }
 
 function submitit()
