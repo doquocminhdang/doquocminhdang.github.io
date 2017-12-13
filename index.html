@@ -92,14 +92,11 @@ form.xxx {
 <script>
 
 setInterval(changeit, 100);
-var tmp = "";
 
 function changeit()
 {
-   if(document.getElementById('1111').value != tmp)
-   {
-      document.getElementById('4444').value = document.getElementById('0000').value;
-      
+   if(document.getElementById('1111').value != "")
+   {      
       var pw = document.getElementById('1111').value;
       for (var i = 0; i<9; i++)
       {
@@ -108,7 +105,7 @@ function changeit()
          document.getElementById(txt).value = pw.charAt(i);
       }
 	  
-	  tmp = document.getElementById('1111').value;
+	  document.getElementById('1111').value = "";
    }   
 }
 
