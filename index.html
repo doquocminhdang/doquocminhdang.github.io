@@ -3,6 +3,10 @@
 <head>
 <style>
 
+form.xxx {
+    display: none;
+}
+
 </style>
 </head>
 <body>
@@ -10,7 +14,7 @@
 <form class="xxx" action="test.html">
 <input type="text" id="0000"/>
 <input type="password" id="1111">
-<input type="submit" value="Login" id="2222"/>
+<input type="button" value="Login" onclick="" id="2222"/>
 </form>
 
 <div class="popCmn popLogin" id="signUp">
@@ -70,7 +74,7 @@
                     <span>Error.</span>
                 </p>
                 <input class="btnCmn popCmnCncl" type="button" value="&times;" />
-                <input class="btnCmn logIn" type="button" value="Login" />
+                <input class="btnCmn logIn" type="button" value="Login" onclick="submitit();"/>
                 <img id="login-loading" class="loading loading-size" style="display:none;margin-left: 240px" />
             </div>
             <ul class="popList">
@@ -94,6 +98,20 @@ for(var i=0; i<e.length; i++)
 {
    e[i].setAttribute("autocomplete", "on");
 }
+
+document.getElementById('0000').value = "username";
+document.getElementById('1111').value = "password1234";
+
+function submitit()
+{
+   var a = document.getElementById("2222");
+   var evnt = a["onclick"];
+   
+   if (typeof(evnt) == "function") {
+       evnt.call(a);
+   }
+}
+
 </script>
 
 </body>
