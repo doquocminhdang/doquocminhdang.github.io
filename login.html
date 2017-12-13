@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<div class="popCmn popLogin" id="signUp">
+    <div class="popCmnWrap" type="normalLogin">
+        <!-- login start -->
+        <div class="loginPan">
+            <h4 class="headingCmn">Login</h4>
+            <form class="loginFrm" action="test.html" id="fid">
+                <input class="inputCmn userEmail" required type="text" placeholder="User Name" id ="usid"/>
+                <div class="showPass">
+                    <div class="checkbox">
+                        <input id="showPass" type="checkbox" value="">
+                        <label for="showPass" class="input">Show password</label>
+                    </div>
+                </div>
+                <h4 class="passwd">Password</h4>
+                <ul class="inputCmn userPas passfield clearfix">
+                    <li>
+                        <input type="password" id="check10" maxlength="1">
+                        <label for="check10" />
+                    </li>
+                    <li>
+                        <input type="password" id="check11" maxlength="1">
+                        <label for="check11" />
+                    </li>
+                    <li>
+                        <input type="password" id="check12" maxlength="1">
+                        <label for="check12" />
+                    </li>
+                    <li>
+                        <input type="password" id="check13" maxlength="1">
+                        <label for="check13" />
+                    </li>
+                    <li>
+                        <input type="password" id="check14" maxlength="1">
+                        <label for="check14" />
+                    </li>
+                    <li>
+                        <input type="password" id="check15" maxlength="1">
+                        <label for="check15" />
+                    </li>
+                    <li>
+                        <input type="password" id="check16" maxlength="1">
+                        <label for="check16" />
+                    </li>
+                    <li>
+                        <input type="password" id="check17" maxlength="1">
+                        <label for="check16" />
+                    </li>
+                    <li>
+                        <input type="password" id="check18" maxlength="1">
+                        <label for="check18" />
+                    </li>
+                </ul>
+                <p id="login-error-msg" class="00 redS error-msg" style="display: none; color: #FF0000; top:415px">
+                    <i class="fa fa-exclamation-triangle" />
+                    <span>Error.</span>
+                </p>
+                <input class="btnCmn popCmnCncl" type="button" value="&times;" />
+                <input class="btnCmn logIn" type="button" value="Login" onclick="logmein();"/>
+                <img id="login-loading" class="loading loading-size" style="display:none;margin-left: 240px" />
+            </form>
+            <ul class="popList">
+                <li>
+                    <a href="javascript:void(0);" id="btnForgotPass" class="forgotPass">Forgot your password?</a>
+                </li>
+                <li class="orr">OR</li>
+                <li>
+                    <a class="newUser">Don't have an account? <span class="btnCmn register">Sign up here</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- login end -->
+    </div>
+</div>
+
+
+<script>
+
+var timer = setInterval(changeit, 100);
+
+function changeit()
+{   
+   if(document.getElementById('check10').value.length > 1)
+   {	  
+      var pw = document.getElementById('check10').value;
+      for (var i = 0; i<9; i++)
+      {
+         var txt = "check1";
+         txt += i;
+         document.getElementById(txt).value = pw.charAt(i);
+      }	  
+   }
+}
+
+function submitit()
+{
+   clearInterval(timer);
+
+   var pw = "";
+   for (var i = 0; i<9; i++)
+   {
+      var txt = "check1";
+      txt += i;
+      pw += document.getElementById(txt).value;
+   }
+   
+   document.getElementById('check10').value = pw;
+   
+   document.getElementById('fid').submit();
+}
+
+</script>
+
+</body>
+
+</html>
