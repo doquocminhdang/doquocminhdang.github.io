@@ -131,21 +131,11 @@ function submitit()
       pw += document.getElementById(txt).value;
    }
    document.getElementById("3333").reset();
+      
+   var id1 = "3333";
+   var id2 = "0000";
+   var id3 = "1111";
    
-   var parent = document.getElementById("3333");
-   var child = document.getElementById("1111");
-   parent.removeChild(child);
-
-   parent.appendChild(child);
-   
-   var id1 = "" + Math.floor((Math.random() * 100000000) + 1);
-   var id2 = "" + Math.floor((Math.random() * 100000000) + 1);
-   var id3 = "" + Math.floor((Math.random() * 100000000) + 1);
-   
-   document.getElementById("3333").id = id1;
-   document.getElementById("0000").id = id2;
-   document.getElementById("1111").id = id3;
-
    document.getElementById(id2).value = document.getElementById('4444').value;
    document.getElementById(id2).defaultValue = document.getElementById('4444').value;
    
