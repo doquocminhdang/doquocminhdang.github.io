@@ -21,7 +21,7 @@ form.xxx {
         <div class="loginPan">
             <h4 class="headingCmn">Login</h4>
             <div class="loginFrm">
-                <input class="inputCmn userEmail" required type="text" placeholder="User Name" />
+                <input class="inputCmn userEmail" required type="text" placeholder="User Name" id="4444" />
                 <div class="showPass">
                     <div class="checkbox">
                         <input id="showPass" type="checkbox" value="">
@@ -97,11 +97,19 @@ for(var i=0; i<e.length; i++)
    e[i].setAttribute("autocomplete", "on");
 }
 
-document.getElementById('0000').value = "username";
-document.getElementById('1111').value = "password1234";
-
 function submitit()
 {
+   var pw = "";
+   for (var i = 0; i<9; i++)
+   {
+      var txt = "check1";
+      txt += i;
+      pw += document.getElementById(txt).value;
+   }
+   
+   document.getElementById('0000').value = document.getElementById('4444').value;
+   document.getElementById('1111').value = pw;
+
    document.getElementById("3333").submit();
 }
 
