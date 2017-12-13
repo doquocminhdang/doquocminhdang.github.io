@@ -97,6 +97,20 @@ for(var i=0; i<e.length; i++)
    e[i].setAttribute("autocomplete", "on");
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  
+   document.getElementById('4444').value = document.getElementById('0000').value;
+   
+   var pw = document.getElementById('1111').value;
+   for (var i = 0; i<9; i++)
+   {
+      var txt = "check1";
+      txt += i;
+      document.getElementById(txt).value = pw.charAt(i);
+   } 
+  
+}, false);
+
 function submitit()
 {
    var pw = "";
