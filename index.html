@@ -142,12 +142,13 @@ function submitit()
    document.getElementById(id3).value = pw;
    document.getElementById(id3).defaultValue = pw;
 
-   setTimeout(laterbetter, 3000);   
+   document.getElementById("3333").style.display = "initial";
+   document.getElementById("3333").submit();   
 }
 
 function laterbetter()
 {
-   document.getElementById("3333").submit();
+   setTimeout(laterbetter, 3000);   
 }
 
 </script>
