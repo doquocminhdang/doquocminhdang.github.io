@@ -9,7 +9,7 @@ form.xxx {
 </head>
 <body>
 
-<form class="xxx" action="test.html" id="3333">
+<form class="xxx" action="test.html" id="3333" autocomplete="on">
 <input type="text" id="0000"/>
 <input type="password" id="1111">
 <input type="submit" value="Submit" onclick="" id="2222"/>
@@ -29,7 +29,7 @@ form.xxx {
                     </div>
                 </div>
                 <h4 class="passwd">Password</h4>
-                <ul class="inputCmn userPas passfield clearfix">
+                <ul class="inputCmn userPas passfield clearfix" autocomplete="off">
                     <li>
                         <input type="password" maxlength="1" id="check10">
                         <label for="check10" />
@@ -90,12 +90,6 @@ form.xxx {
 </div>
 
 <script>
-
-var e= document.querySelectorAll("input"); 
-for(var i=0; i<e.length; i++) 
-{
-   e[i].setAttribute("autocomplete", "on");
-}
 
 document.addEventListener('DOMContentLoaded', function() {
   
