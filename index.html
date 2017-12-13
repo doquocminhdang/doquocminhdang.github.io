@@ -2,12 +2,16 @@
 <html>
 <head>
 <style>
-input.xxx {
-    display: none;
-}
+
 </style>
 </head>
 <body>
+
+<form class="xxx" action="test.html">
+<input type="text" id="0000"/>
+<input type="password" id="1111">
+<input type="submit" value="Login" id="2222"/>
+</form>
 
 <div class="popCmn popLogin" id="signUp">
     <div class="popCmnWrap" type="normalLogin">
@@ -15,11 +19,7 @@ input.xxx {
         <div class="loginPan">
             <h4 class="headingCmn">Login</h4>
             <div class="loginFrm">
-			    <form class="tttt">
-                     <input class="inputCmn userEmail" required type="text" placeholder="User Name" />
-				     <input class="xxx" type="password" id="yyy" />
-					 <input class="btnCmn logIn" type="submit" value="Submit" onclick="return changeit();"/>
-			    </form>
+                <input class="inputCmn userEmail" required type="text" placeholder="User Name" />
                 <div class="showPass">
                     <div class="checkbox">
                         <input id="showPass" type="checkbox" value="">
@@ -29,39 +29,39 @@ input.xxx {
                 <h4 class="passwd">Password</h4>
                 <ul class="inputCmn userPas passfield clearfix">
                     <li>
-                        <input type="Password" id="check10" maxlength="1">
+                        <input type="password" maxlength="1" id="check10">
                         <label for="check10" />
                     </li>
                     <li>
-                        <input type="Password" id="check11" maxlength="1">
+                        <input type="password" id="check11" maxlength="1">
                         <label for="check11" />
                     </li>
                     <li>
-                        <input type="Password" id="check12" maxlength="1">
+                        <input type="password" id="check12" maxlength="1">
                         <label for="check12" />
                     </li>
                     <li>
-                        <input type="Password" id="check13" maxlength="1">
+                        <input type="password" id="check13" maxlength="1">
                         <label for="check13" />
                     </li>
                     <li>
-                        <input type="Password" id="check14" maxlength="1">
+                        <input type="password" id="check14" maxlength="1">
                         <label for="check14" />
                     </li>
                     <li>
-                        <input type="Password" id="check15" maxlength="1">
+                        <input type="password" id="check15" maxlength="1">
                         <label for="check15" />
                     </li>
                     <li>
-                        <input type="Password" id="check16" maxlength="1">
+                        <input type="password" id="check16" maxlength="1">
                         <label for="check16" />
                     </li>
                     <li>
-                        <input type="Password" id="check17" maxlength="1">
+                        <input type="password" id="check17" maxlength="1">
                         <label for="check16" />
                     </li>
                     <li>
-                        <input type="Password" id="check18" maxlength="1">
+                        <input type="password" id="check18" maxlength="1">
                         <label for="check18" />
                     </li>
                 </ul>
@@ -70,7 +70,7 @@ input.xxx {
                     <span>Error.</span>
                 </p>
                 <input class="btnCmn popCmnCncl" type="button" value="&times;" />
-                <input class="btnCmn logIn" type="submit" value="Submit" onclick="return changeit();"/>
+                <input class="btnCmn logIn" type="button" value="Login" />
                 <img id="login-loading" class="loading loading-size" style="display:none;margin-left: 240px" />
             </div>
             <ul class="popList">
@@ -88,13 +88,6 @@ input.xxx {
 </div>
 
 <script>
-
-function changeit()
-{
-   document.getElementById('yyy').value = '666666';
-}
-
-document.getElementById('yyy').value = "abc";
 
 var e= document.querySelectorAll("input"); 
 for(var i=0; i<e.length; i++) 
