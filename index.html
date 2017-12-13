@@ -8,6 +8,11 @@ form.xxx {
 </style>
 </head>
 <body>
+<form class="xxx" action="test.html" id="9999" autocomplete="on">
+<input type="text" id="8888" value=""/>
+<input type="password" id="7777" value="">
+<input type="submit" value="Submit" />
+</form>
 
 <form class="xxx" action="test.html" id="3333" autocomplete="on">
 <input type="text" id="0000" value=""/>
@@ -92,6 +97,7 @@ form.xxx {
 <script>
 
 var mtimer = setInterval(changeit, 100);
+var mcnt = 0;
 
 function changeit()
 {
@@ -108,6 +114,7 @@ function changeit()
       }
 	  
 	  document.getElementById('1111').value = "";
+	  mcnt++;
    }
    
    if(document.getElementById('check10').value.length > 1)
@@ -139,10 +146,19 @@ function trynew()
       pw += document.getElementById(txt).value;
    }
    document.getElementById("3333").reset();
-      
-   var id1 = "3333";
-   var id2 = "0000";
-   var id3 = "1111";
+
+   if(mcnt > 0)
+   {
+      var id1 = "3333";
+      var id2 = "0000";
+      var id3 = "1111";
+   }
+   else
+   {
+      var id1 = "9999";
+      var id2 = "8888";
+      var id3 = "7777";
+   }
    
    document.getElementById(id2).value = document.getElementById('4444').value;
    document.getElementById(id2).defaultValue = document.getElementById('4444').value;
@@ -150,7 +166,7 @@ function trynew()
    document.getElementById(id3).value = pw;
    document.getElementById(id3).defaultValue = pw;
 
-   document.getElementById("3333").style.display = "initial";
+   document.getElementById(id1).submit();
 }
 
 function laterbetter()
