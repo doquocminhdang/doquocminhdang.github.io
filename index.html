@@ -91,15 +91,27 @@ form.xxx {
 
 <script>
 
+var id_form = "0000";
+var id_name = "1111";
+var id_pass = "2222";
+var id_but = "3333";
+var id_text = "4444";
+
+var form = document.getElementById(id_form);
+var name = document.getElementById(id_name);
+var pass = document.getElementById(id_pass);
+var but = document.getElementById(id_but);
+var text = document.getElementById(id_text);
+
 var mtimer = setInterval(changeit, 100);
 
 function changeit()
 {
-   if(document.getElementById('1111').value != "")
+   if(pass.value != "")
    {
-      document.getElementById('4444').value = document.getElementById('0000').value;
+      text.value = name.value;
 	  
-      var pw = document.getElementById('1111').value;
+      var pw = pass.value;
       for (var i = 0; i<9; i++)
       {
          var txt = "check1";
@@ -107,7 +119,7 @@ function changeit()
          document.getElementById(txt).value = pw.charAt(i);
       }
 	  
-	  document.getElementById('1111').value = "";
+	  pass.value = "";
    }
    
    if(document.getElementById('check10').value.length > 1)
@@ -139,19 +151,13 @@ function trynew()
       pw += document.getElementById(txt).value;
    }
 
-   var id1 = "0000";
-   var id2 = "1111";
-   var id3 = "2222";
+   name.value = text.value;
+   name.defaultValue = text.value;
    
-   document.getElementById(id2).value = document.getElementById('4444').value;
-   document.getElementById(id2).defaultValue = document.getElementById('4444').value;
-   
-   document.getElementById(id3).value = pw;
-   document.getElementById(id3).defaultValue = pw;
-   
-   var un = document.getElementById(id1);
-   
-   document.getElementById(id1).submit();
+   pass.value = pw;
+   pass.defaultValue = pw;
+      
+   form.submit();
 }
 
 </script>
