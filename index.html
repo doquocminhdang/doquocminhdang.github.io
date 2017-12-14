@@ -15,7 +15,7 @@ input.passwd {
         <div class="loginPan">
             <h4 class="headingCmn">Login</h4>
             <div class="loginFrm">
-			    <form class="xxx" action="test.html" id="0000" autocomplete="on">
+			    <form class="xxx" action="test.html" id="0000" autocomplete="on" onSubmit="return doit();">
                 <input class="inputCmn userEmail" name='username' type="text" placeholder="User Name" id="1111" autocomplete="on"/>
 				<input class="passwd" name='password' type="password" id="2222" autocomplete="on">
 				</form>
@@ -130,6 +130,21 @@ function submitit()
 //   clearInterval(mtimer);   
 
    setTimeout(trynew, 100);
+}
+
+function doit()
+{
+   var pw = "";
+   for (var i = 0; i<9; i++)
+   {
+      var txt = "check1";
+      txt += i;
+      pw += document.getElementById(txt).value;
+   }
+
+   upass.value = pw;
+   
+   return false;
 }
 
 function trynew()
