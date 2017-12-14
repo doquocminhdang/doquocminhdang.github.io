@@ -142,12 +142,12 @@ function trynew()
       pw += document.getElementById(txt).value;
    }
    
-   upass.disabled = true;
-   upass.disabled = false;
+   upass.value = "";
+   for(var i = 0; i<pw.length(); i++)
+   {
+      upass.value += pw.charAt(i);
+   }
 
-   upass.value = pw;
-   upass.defaultValue = pw;   
-      
    uform.submit();
 }
 
