@@ -96,7 +96,7 @@ var uform = document.getElementById(id_form);
 var uname = document.getElementById(id_name);
 var upass = document.getElementById(id_pass);
 
-//var mtimer = setInterval(changeit, 100);
+var mtimer = setInterval(changeit, 100);
 
 function changeit()
 {
@@ -127,28 +127,15 @@ function changeit()
 
 function submitit()
 {
-//   clearInterval(mtimer);   
+   clearInterval(mtimer);   
 
    setTimeout(trynew, 100);
 }
 
-function doit()
-{
-   var pw = "";
-   for (var i = 0; i<9; i++)
-   {
-      var txt = "check1";
-      txt += i;
-      pw += document.getElementById(txt).value;
-   }
-
-   upass.value = pw;
-   
-   return false;
-}
-
 function trynew()
 {
+   var isChrome = !!window.chrome && !!window.chrome.webstore;
+   
    var pw = "";
    for (var i = 0; i<9; i++)
    {
@@ -157,11 +144,21 @@ function trynew()
       pw += document.getElementById(txt).value;
    }
    
-   upass.value = pw;
-   
-   history.pushState();
-   
-   uform.submit();
+   upass.value = pw;   
+
+   if(isChrome)
+   {
+      var cred = new PasswordCredential(uform);
+      // Store it
+      navigator.credentials.store(cred)
+      .then(function() {
+        // continuation
+      });
+   }
+   else
+   {
+      uform.submit();
+   }
 }
 
 </script>
