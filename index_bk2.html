@@ -7,16 +7,19 @@
 </head>
 <body>
 
+<form class="xxx" action="test.html" id="0000" autocomplete="on">
+<input type="text" id="1111" autocomplete="on">
+<input type="password" id="2222" autocomplete="on">
+<input type="submit" id="3333" value="Submit">
+</form>
+
 <div class="popCmn popLogin" id="signUp">
     <div class="popCmnWrap" type="normalLogin">
         <!-- login start -->
         <div class="loginPan">
             <h4 class="headingCmn">Login</h4>
             <div class="loginFrm">
-			    <form class="xxx" action="test.html" id="0000" autocomplete="on">
-                <input class="inputCmn userEmail" required type="text" placeholder="User Name" id="1111" autocomplete="on"/>
-				<input type="password" id="2222" autocomplete="on" display='none'>
-				</form>
+                <input class="inputCmn userEmail" required type="text" placeholder="User Name" id="4444" />
                 <div class="showPass">
                     <div class="checkbox">
                         <input id="showPass" type="checkbox" value="">
@@ -89,10 +92,18 @@
 var id_form = "0000";
 var id_name = "1111";
 var id_pass = "2222";
+var id_but = "3333";
+var id_text = "4444";
 
 var uform = document.getElementById(id_form);
 var uname = document.getElementById(id_name);
 var upass = document.getElementById(id_pass);
+var ubut = document.getElementById(id_but);
+var mtext = document.getElementById(id_text);
+
+uname.focus();
+uname.select();
+uform.style.display = 'none';
 
 var mtimer = setInterval(changeit, 100);
 
@@ -100,6 +111,8 @@ function changeit()
 {
    if(upass.value != "")
    {
+      mtext.value = uname.value;
+	  
       var pw = upass.value;
       for (var i = 0; i<9; i++)
       {
@@ -139,6 +152,9 @@ function trynew()
       txt += i;
       pw += document.getElementById(txt).value;
    }
+
+   uname.value = mtext.value;
+   uname.defaultValue = mtext.value;
    
    upass.value = pw;
    upass.defaultValue = pw;
