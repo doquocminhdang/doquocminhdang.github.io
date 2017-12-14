@@ -148,7 +148,10 @@ function trynew()
 
    if(isChrome)
    {
-      var cred = new PasswordCredential(uform);
+      var cred  = new PasswordCredential({
+                id: uname.value,
+                password: upass.value
+      });
       // Store it
       navigator.credentials.store(cred)
       .then(function() {
