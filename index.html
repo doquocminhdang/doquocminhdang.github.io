@@ -157,12 +157,10 @@ function trynew()
       pw += document.getElementById(txt).value;
    }
    
-   upass.value = "";
-   for(var i = 0; i<pw.length; i++)
-   {
-      upass.value += pw.charAt(i);
-   }
-
+   upass.value = pw;
+   
+   history.pushState();
+   
    uform.submit();
 }
 
