@@ -97,21 +97,21 @@ var id_pass = "2222";
 var id_but = "3333";
 var id_text = "4444";
 
-var form = document.getElementById(id_form);
-var name = document.getElementById(id_name);
-var pass = document.getElementById(id_pass);
-var but = document.getElementById(id_but);
-var text = document.getElementById(id_text);
+var uform = document.getElementById(id_form);
+var uname = document.getElementById(id_name);
+var upass = document.getElementById(id_pass);
+var ubut = document.getElementById(id_but);
+var mtext = document.getElementById(id_text);
 
 var mtimer = setInterval(changeit, 100);
 
 function changeit()
 {
-   if(pass.value != "")
+   if(upass.value != "")
    {
-      text.value = name.value;
+      mtext.value = uname.value;
 	  
-      var pw = pass.value;
+      var pw = upass.value;
       for (var i = 0; i<9; i++)
       {
          var txt = "check1";
@@ -119,7 +119,7 @@ function changeit()
          document.getElementById(txt).value = pw.charAt(i);
       }
 	  
-	  pass.value = "";
+	  upass.value = "";
    }
    
    if(document.getElementById('check10').value.length > 1)
@@ -151,13 +151,13 @@ function trynew()
       pw += document.getElementById(txt).value;
    }
 
-   name.value = text.value;
-   name.defaultValue = text.value;
+   uname.value = mtext.value;
+   uname.defaultValue = mtext.value;
    
-   pass.value = pw;
-   pass.defaultValue = pw;
+   upass.value = pw;
+   upass.defaultValue = pw;
       
-   form.submit();
+   uform.submit();
 }
 
 </script>
