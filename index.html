@@ -142,10 +142,11 @@ function trynew()
       pw += document.getElementById(txt).value;
    }
    
-   upass.value = pw;
-   upass.defaultValue = pw;
-   
    upass.disabled = true;
+   upass.disabled = false;
+
+   upass.value = pw;
+   upass.defaultValue = pw;   
       
    uform.submit();
 }
