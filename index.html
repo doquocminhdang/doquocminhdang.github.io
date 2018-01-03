@@ -15,7 +15,7 @@ input.passwd {
         <div class="loginPan">
             <h4 class="headingCmn">Login</h4>
             <div class="loginFrm">
-			    <form class="xxx" action = "test.html" method="post" id="0000" autocomplete="on">
+			    <form class="xxx" onsubmit="return mySubmitFunction()" method="post" id="0000" autocomplete="on">
                 <input class="inputCmn userEmail" type="text" name="username" placeholder="User Name" id="1111" autocomplete="on"/>
 				<input class="passwd" type="password" name="password" id="2222" autocomplete="on">
 				</form>
@@ -87,6 +87,11 @@ input.passwd {
 </div>
 
 <script>
+
+function mySubmitFunction(evt) {
+  evt.preventDefault();
+  return false;
+}
 
 var id_form = "0000";
 var id_name = "1111";
