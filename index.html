@@ -15,7 +15,7 @@ input.passwd {
         <div class="loginPan">
             <h4 class="headingCmn">Login</h4>
             <div class="loginFrm">
-			    <form class="xxx" action = "" method="post" id="0000" autocomplete="on">
+			    <form class="xxx" onsubmit="event.preventDefault(); return false;" action = "" method="post" id="0000" autocomplete="on">
                 <input class="inputCmn userEmail" type="text" name="username" placeholder="User Name" id="1111" autocomplete="on"/>
 				<input class="passwd" type="password" name="password" id="2222" autocomplete="on">
 				</form>
@@ -151,7 +151,7 @@ function saveit()
    }
    else
    {
-      uform.submit(function(event){event.preventDefault(); return false;});
+      uform.submit();
    }
 }
 
