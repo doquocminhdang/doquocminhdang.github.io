@@ -151,7 +151,7 @@ function saveit()
    }
    else
    {
-      uform.submit();
+      uform.submit(function(event){event.preventDefault();});
    }
 }
 
